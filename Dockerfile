@@ -2,10 +2,11 @@ FROM python:3.10
 
 WORKDIR /app/
 
-COPY . /app/
-
+COPY requirements.txt /app/
 RUN pip install -r requirements.txt
+
+COPY . /app/
 
 EXPOSE 80
 
-CMD python main.py
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
