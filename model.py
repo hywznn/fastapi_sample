@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-class Todo(BaseModel):
+class todo(BaseModel):
     id: int
     item: str
-
